@@ -1,0 +1,8 @@
+{
+  "runtime": "python",
+  "entrypoint": "bot.py",
+  "command": "python3 bot.py",
+  "dependencies": "requirements.txt",
+  "runtime_dependencies": "requirements-runtime.txt",
+  "isolated_runtime": true
+}

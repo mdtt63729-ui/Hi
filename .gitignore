@@ -1,0 +1,15 @@
+.env
+*.db
+__pycache__/
+.pytest_cache/
+data/uploads/*
+data/temp/*
+data/artifacts/*
+!data/uploads/.gitkeep
+!data/temp/.gitkeep
+!data/artifacts/.gitkeep
+*.log
+
+.gitofy_runtime/
+*.pyc
+__pycache__/

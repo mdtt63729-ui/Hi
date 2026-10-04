@@ -1,0 +1,7 @@
+-r requirements.txt
+fastapi>=0.110,<1
+uvicorn>=0.29,<1
+redis>=5,<8
+boto3>=1.34,<2
+asyncpg>=0.29,<1
+python-multipart>=0.0.9,<1

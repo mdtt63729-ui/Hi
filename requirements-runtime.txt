@@ -1,0 +1,12 @@
+# Optional full Gitofy runtime. Do NOT install during host startup.
+aiogram==3.22.0
+httpx>=0.27,<1
+SQLAlchemy>=2.0,<3
+aiosqlite>=0.20,<1
+cryptography>=42,<47
+pydantic>=2.7,<3
+pydantic-settings>=2.2,<3
+PyYAML>=6,<7
+# Optional native Git engine. TheHostServer startup does NOT pip-install this.
+# If the host image already provides libgit2 + pygit2, Gitofy uses it automatically.
+pygit2>=1.16,<2
