@@ -24,16 +24,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Complete the source tree from upstream (overlay files win)
-        continue-on-error: true
         run: |
           set -euo pipefail
-          if [ ! -d neogpt/app/src/main/java ]; then
-            git clone --depth 1 https://github.com/mdtt63729-ui/NeoGpt /tmp/upstream
-            rm -rf /tmp/upstream/.git /tmp/upstream/.github /tmp/upstream/docs
-            mkdir -p neogpt
-            rsync -a --ignore-existing /tmp/upstream/ neogpt/
-          fi
-          find neogpt -type f | wc -l
+          git clone --depth 1 https://github.com/mdtt63729-ui/NeoGpt /tmp/upstream
+          rm -rf /tmp/upstream/.git /tmp/upstream/.github /tmp/upstream/docs
+          mkdir -p neogpt
+          rsync -a --ignore-existing /tmp/upstream/ neogpt/
+          echo "files in neogpt/: $(find neogpt -type f | wc -l)"
+          test -f neogpt/settings.gradle.kts
+          test -f neogpt/app/src/main/java/com/neogpt/client/MainActivity.kt
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
